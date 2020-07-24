@@ -1,4 +1,4 @@
-package com.wormpex.fd;
+package com.wormpex.fd.demo;
 
 import static org.junit.Assert.assertTrue;
 
