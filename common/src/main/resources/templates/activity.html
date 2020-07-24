@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>活动配置</title>
+    <link rel="stylesheet" type="text/css" media="all" href="../../css/stsm.css" th:href="@{/promotion/css/stsm.css}"/>
+</head>
+<body>
+
+<div th:replace="link_header.html :: common_header"></div>
+
+<div>
+    <form action="#" th:action="@{/promotion/tl/activity}" th:object="${activity}" method="post">
+        <fieldset>
+
+            <legend>活动管理</legend>
+            <div>
+                <label>活动id：</label>
+                <input type="text" th:field="*{id}"/>
+            </div>
+            <div>
+                <label>活动名称：</label>
+                <input type="text" th:field="*{name}"/>
+            </div>
+            <div>
+                <label>活动描述：</label>
+                <input type="text" th:field="*{description}"/>
+            </div>
+            <div>
+                <label>创建时间：</label>
+                <input type="text" th:field="*{createTime}"/>
+            </div>
+            <div>
+                <label>更新时间：</label>
+                <input type="text" th:field="*{updateTime}"/>
+            </div>
+            <div>
+                <label>过期时间：</label>
+                <input type="text" th:field="*{expireTime}"/>
+            </div>
+            <div>
+                <label>活动状态：</label>
+                <select th:field="*{activityStatus}">
+                    <option th:each="e : ${activityStatuses}"
+                            th:value="${e.name()}"
+                            th:text="${e.name()}">INIT
+                    </option>
+                </select>
+            </div>
+            <div>
+                <label>权益类型：</label>
+                <select th:field="*{privilegeType}">
+                    <option th:each="e : ${privilegeTypes}"
+                            th:value="${e.name()}"
+                            th:text="${e.name()}">ALWAYS
+                    </option>
+                </select>
+            </div>
+            <div>
+                <label>促销类型：</label>
+                <select th:field="*{promotionType}">
+                    <option th:each="e : ${promotionTypes}"
+                            th:value="${e.name()}"
+                            th:text="${e.name()}">DISCOUNT
+                    </option>
+                </select>
+            </div>
+            <div>
+                <label>价格过滤类型：</label>
+                <select th:field="*{priceFilterType}">
+                    <option th:each="e : ${priceFilterTypes}"
+                            th:value="${e.name()}"
+                            th:text="${e.name()}">SkuTopPrice
+                    </option>
+                </select>
+            </div>
+            <div>
+                <label>业务线类型：</label>
+                <select th:field="*{bizlineType}">
+                    <option th:each="e : ${bizLineTypes}"
+                            th:value="${e.name()}"
+                            th:text="${e.name()}">COMMON
+                    </option>
+                </select>
+            </div>
+            <div>
+                <label>标签：</label>
+                <input type="text" th:field="*{tag}"/>
+            </div>
+            <div>
+                <label>优先级：</label>
+                <input type="text" th:field="*{priority}"/>
+            </div>
+            <div>
+                <label>AppShow：</label>
+                <textarea th:field="*{appShow}" rows="3" cols="50"></textarea>
+            </div>
+            <div>
+                <label>优惠金额：</label>
+                <input type="text" th:field="*{promotionAmount}"/>
+            </div>
+            <div>
+                <label>营销账户：</label>
+                <input type="text" th:field="*{accountId}"/>
+            </div>
+            <div>
+                <label>命中规则：</label>
+                <textarea th:field="*{promotionRule}" rows="5" cols="50"></textarea>
+            </div>
+            <div>
+                <label>计算规则：</label>
+                <textarea th:field="*{calculateRule}" rows="5" cols="50"></textarea>
+            </div>
+            <div>
+                <label>操作：</label>
+                <button type="submit" name="view">输入ID查看</button>
+                <button type="submit" name="update">根据ID更新</button>
+                <button type="submit" name="copy">根据ID复制活动</button>
+                <span style="color: darkgreen" th:text="${status}">status</span>
+            </div>
+            <div th:switch="${activity.activityStatus}">
+                <label>活动上下线：</label>
+                <a th:case="'ONLINE'" href="#" th:href="@{activity/push_offline(activityId=${activity.id})}">下线</a>
+                <a th:case="*" href="#" th:href="@{activity/push_online(activityId=${activity.id})}">上线</a>
+            </div>
+
+        </fieldset>
+    </form>
+</div>
+
+</body>
+</html>

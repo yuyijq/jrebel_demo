@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<div th:fragment="common_header">
+    <fieldset>
+        <legend>快速通道</legend>
+        <div>
+            <a href="#" th:href="@{/promotion/tl/activity}">活动管理</a>
+            <a href="#" th:href="@{/promotion/tl/activity/list}">活动列表</a>
+            <a href="#" th:href="@{/promotion/tl/index/home}">索引管理</a>
+            <a href="#" th:href="@{/promotion/tl/coupon/list}">券列表</a>
+            <a href="#" th:href="@{/promotion/tl/coupon/home}">券管理</a>
+            <a href="#" th:href="@{/promotion/tl/coupon_mapping/list}">券映射列表</a>
+            <a href="#" th:href="@{/promotion/tl/coupon_mapping/home}">券映射管理</a>
+            <a href="#" th:href="@{/promotion/tl/user_coupon/list}">用户券列表</a>
+            <a href="#" th:href="@{/promotion/tl/coupon_send/home}">给用户发券</a>
+            <a href="#" th:href="@{/promotion/tl/index_verbose/home}">索引实时调试</a>
+            <a href="#" th:href="@{/promotion/tl/notify/home}">活动通知</a>
+        </div>
+    </fieldset>
+</div>
+</html>

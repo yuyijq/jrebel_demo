@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appender name="Console" class="com.wormpex.fd.logging.logback.appender.WConsoleAppender"/>
+
+	<appender name="WConfigAppender" class="com.wormpex.fd.logging.logback.appender.WFileAppender">
+		<fileName>desc_wconfig</fileName>
+	</appender>
+
+	<appender name="ErrorLogAppender" class="com.wormpex.fd.logging.logback.appender.WErrorLogAppender" />
+
+	<root level="INFO">
+		<appender-ref ref="Console"/>
+		<appender-ref ref="WConfigAppender"/>
+		<appender-ref ref="ErrorLogAppender"/>
+	</root>
+
+</configuration>
