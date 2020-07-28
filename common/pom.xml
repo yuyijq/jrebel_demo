@@ -6,7 +6,7 @@
 
 	<groupId>com.wormpex.fd</groupId>
 	<artifactId>demo.common</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>1.0</version>
 
 	<name>demo.common</name>
 	<packaging>war</packaging>
