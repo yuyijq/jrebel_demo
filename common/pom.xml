@@ -88,6 +88,10 @@
 			<artifactId>spring-boot-starter-jdbc</artifactId>
 			<version>${spring.boot.version}</version>
 		</dependency>
+		<dependency>
+			<groupId>com.wormpex.common</groupId>
+			<artifactId>wcommon-web-support</artifactId>
+		</dependency>
 	</dependencies>
 	<build>
 		<finalName>demo-common</finalName>
