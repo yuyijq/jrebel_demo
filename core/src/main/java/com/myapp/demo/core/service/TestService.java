@@ -13,4 +13,8 @@ public class TestService {
     public Object test2(){
         return new ArrayList<Object>();
     }
+
+    public Object test3(){
+        return new ArrayList<Object>();
+    }
 }
