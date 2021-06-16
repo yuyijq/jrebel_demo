@@ -16,6 +16,6 @@ public class TestController {
     @GetMapping("/test1")
     @ResponseBody
     public Object test() {
-        return testService.test();
+        return testService.test4();
     }
 }

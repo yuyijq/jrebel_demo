@@ -9,7 +9,7 @@
 	<id>core</id>
 
 	<classpath>
-		<dir name="/Users/yuzhaohui/work/fd_demo/core/target/classes">
+		<dir name="${rebel.project.path}/target/classes">
 		</dir>
 	</classpath>
 
